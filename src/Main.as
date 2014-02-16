@@ -121,7 +121,10 @@ package
 		{
 			trace("clicked");
 			TweenLite.killTweensOf( bird );
-			bird.y -= 10;
+			if( bird.y >= 10 )
+			{
+				bird.y -= 10;				
+			}
 			TweenLite.to( bird, 1, { delay:0, y:GROUND_HEIGHT, ease:Quart.easeIn } );
 		}
 		
